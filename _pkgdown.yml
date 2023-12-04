@@ -7,20 +7,20 @@ home:
     structure: [links, license, citation, authors, dev]
 navbar:
   structure:
-    left:  [reference, articles]
+    left:  [reference, articles, news]
     right: [search, github]
   components:
    articles:
     text: Articles
     menu:
     - text: 1. Introduction
-      href: vignettes/introduction.html
+      href: docs/articles/introduction.html
     - text: 2. Mapping the US
-      href: vignettes/mapping.html
+      href: docs/articles/mapping.html
     - text: 3. Advanced Mapping
-      href: vignettes/advanced-mapping.html
+      href: docs/articles/advanced-mapping.html
     - text: 4. Example Analysis
-      href: vignettes/example_analysis.html
+      href: docs/articles/example_analysis.html
 footer:
   structure:
     left: developed_by
