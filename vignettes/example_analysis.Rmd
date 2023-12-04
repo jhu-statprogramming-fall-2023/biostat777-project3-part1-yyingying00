@@ -2,11 +2,8 @@
 title: "4. Example Analysis"
 author: "Yingying Yu"
 date: "2023-12-03"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{1. Introduction}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+output:
+  html_document: default
 ---
 
 ```{r setup, include = FALSE}
@@ -41,7 +38,7 @@ glimpse(tornados)
 
 ### 1. Prepare and wrangle data
 
-```{r, warning==FALSE}
+```{r}
 # delete several columns
 data <- tornados[, c("om","yr","mo","date","st","fat","mag")]
 ```
@@ -50,12 +47,12 @@ data <- tornados[, c("om","yr","mo","date","st","fat","mag")]
 
 Before we start in are main dive, lets look to see how many tornadoes were there from the time period 1950 to 2021.
 
-```{r, warning==FALSE}
+```{r}
 # Count the number of tornadoes
 data %>% count() %>% print()
 ```
 
-```{r, warning==FALSE}
+```{r}
 # Summarise average tornadoes by year
 yearly_tornado <- data %>%
   group_by(yr) %>%
@@ -90,7 +87,7 @@ We can see that there is a gradually increasing trend of number of tornadoes as 
 
 Does tornadoes more likely to occur at some states?
 
-```{r, warning==FALSE}
+```{r}
 # Summarise number of tornadoes by state
 tornadoes_st <- data %>%
   group_by(st) %>%
@@ -127,13 +124,12 @@ ggplot(yearly_tornado_top, aes(yr, n)) +
 Texas by a clear margin saw the most tornadoes in this timeframe. Kansas, Oklahoma, and Florida round out the top four. This package also provide a function to retrieve the unique FIPS (Federal Information Processing Standards) code for a state or county. Let's try it with the top 4 states.
 
 ```{r}
+library(usmap)
 fips(c("Tx", "KS", "OK", "FL"))
 ```
 
 
-```{r, warning==FALSE}
-library(usmap)
-
+```{r}
 # Add color levels to data for plot
 tornadoes_st <- tornadoes_st %>%
   mutate(color = case_when(value < 500 ~ "Less than 500",
@@ -189,7 +185,7 @@ Looking at the visualization:
 
 ### 4. Tornadoes by Month
 
-```{r, warning==FALSE}
+```{r}
 # Summarise number or tornadoes by month
 month <- data %>%
   group_by(mo) %>%
@@ -224,7 +220,7 @@ ggplot(month, aes(abv, value)) +
 
 How do different level of tornado affect the fatality?
 
-```{r, warning==FALSE}
+```{r}
 # Summarise average fatalities by type
 level_fat <- data %>%
   filter(!mag == -9)
@@ -264,7 +260,7 @@ mean_fat
 # calculate the total number of tornado fatalities over years by state
 total_fat <- split_fat %>% 
   map_int(.f = ~sum(.x$total_fat)) %>% 
-  sort(decreasing = T) %>% 
+  sort(decreasing = T)
 total_fat
 ```
 

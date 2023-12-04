@@ -2,7 +2,7 @@
 
 Original R package comes from: <https://github.com/pdil/usmap>, created by [Paolo Di Lorenzo](https://github.com/pdil).
 
-Pkgdown website for this package: ; the website and the Example Analysis created by Yingying Yu.
+Pkgdown website for this package: <https://jhu-statprogramming-fall-2022.github.io/biostat840-project3-pkgdown-yyingying00>; the website and the Example Analysis were created by [Yingying Yu](https://github.com/yyingying00).
 
 5 things customized in the `pkgdown` website:
 
