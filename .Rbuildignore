@@ -14,3 +14,6 @@
 ^codecov\.yml$
 ^LICENSE\.md$
 ^\.lintr$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
