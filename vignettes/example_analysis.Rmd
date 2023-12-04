@@ -22,6 +22,9 @@ In this analysis, I am trying to understand how many tornadoes happened through 
 ### 0. Load the data
 
 ```{r, warning=FALSE}
+if (!requireNamespace("here", quietly = TRUE)) {
+  install.packages("here")
+}
 library(here)
 library(tidyverse)
 if (!file.exists(here("data", "tuesdata_drugs.RDS"))) {
@@ -29,10 +32,10 @@ if (!file.exists(here("data", "tuesdata_drugs.RDS"))) {
     tornados <- tuesdata
 
     # save the files to RDS objects
-    saveRDS(tuesdata$tornados, file = here("data", "tuesdata_tornados.RDS"))
+    save(tuesdata$tornados, file = here("data", "tuesdata_tornados.rda"))
 }
 
-tornados <- readRDS(here("data", "tuesdata_tornados.RDS"))
+tornados <- load(here("data", "tuesdata_tornados.rda"))
 glimpse(tornados)
 ```
 
