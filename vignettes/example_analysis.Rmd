@@ -30,15 +30,15 @@ if (!requireNamespace("tidyverse", quietly = TRUE)) {
 }
 library(here)
 library(tidyverse)
-if (!file.exists(here("data", "tuesdata_drugs.RDS"))) {
+if (!file.exists(here("data", "tuesdata_drugs.rda"))) {
     tuesdata <- tidytuesdayR::tt_load("2023-05-16")
-    tornados <- tuesdata
+    tornados <- tuesdata$tornados
 
-    # save the files to RDS objects
-    save(tuesdata$tornados, file = here("data", "tuesdata_tornados.rda"))
+    # save the files to rda objects
+    save(tornados, file = here("data", "tuesdata_tornados.rda"))
 }
 
-tornados <- load(here("data", "tuesdata_tornados.rda"))
+load(here("data", "tuesdata_tornados.rda"))
 glimpse(tornados)
 ```
 
