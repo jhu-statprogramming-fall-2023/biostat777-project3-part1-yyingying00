@@ -4,6 +4,10 @@ author: "Yingying Yu"
 date: "2023-12-03"
 output:
   html_document: default
+packages:
+  - tidytuesdayR
+  - tidyverse
+  - here
 ---
 
 ```{r setup, include = FALSE}
@@ -22,12 +26,6 @@ In this analysis, I am trying to understand how many tornadoes happened through 
 ### 0. Load the data
 
 ```{r, warning=FALSE}
-if (!requireNamespace("here", quietly = TRUE)) {
-  install.packages("here")
-}
-if (!requireNamespace("tidyverse", quietly = TRUE)) {
-  install.packages("tidyverse")
-}
 library(here)
 library(tidyverse)
 if (!file.exists(here("data", "tuesdata_drugs.rda"))) {
