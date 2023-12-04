@@ -25,6 +25,9 @@ In this analysis, I am trying to understand how many tornadoes happened through 
 if (!requireNamespace("here", quietly = TRUE)) {
   install.packages("here")
 }
+if (!requireNamespace("tidyverse", quietly = TRUE)) {
+  install.packages("tidyverse")
+}
 library(here)
 library(tidyverse)
 if (!file.exists(here("data", "tuesdata_drugs.RDS"))) {
@@ -62,12 +65,19 @@ yearly_tornado <- data %>%
   count()
 
 # Add custom font
+if (!requireNamespace("showtext", quietly = TRUE)) {
+  install.packages("showtext")
+}
 library(showtext)
 font_add_google("Ubuntu")
 font_labels <- "Ubuntu"
 showtext_auto()
 
 # Plot data
+if (!requireNamespace("ggplot2", quietly = TRUE)) {
+  install.packages("ggplot2")
+}
+library(ggplot2)
 ggplot(yearly_tornado, aes(yr, n)) +
   geom_line(color = "#98103E") +
   labs(title = "Tornado through the Years",
@@ -127,6 +137,9 @@ ggplot(yearly_tornado_top, aes(yr, n)) +
 Texas by a clear margin saw the most tornadoes in this timeframe. Kansas, Oklahoma, and Florida round out the top four. This package also provide a function to retrieve the unique FIPS (Federal Information Processing Standards) code for a state or county. Let's try it with the top 4 states.
 
 ```{r}
+if (!requireNamespace("usmap", quietly = TRUE)) {
+  install.packages("usmap")
+}
 library(usmap)
 fips(c("Tx", "KS", "OK", "FL"))
 ```
@@ -247,6 +260,9 @@ ggplot(level_fat, aes(mag, fat)) +
 ### 6. Average number of Tornado Fatalities by State
 
 ```{r, warning==FALSE}
+if (!requireNamespace("purrr", quietly = TRUE)) {
+  install.packages("purrr")
+}
 library(purrr)
 fat <- level_fat[, c("st","yr","fat")]
 wide_fat <- fat %>%
