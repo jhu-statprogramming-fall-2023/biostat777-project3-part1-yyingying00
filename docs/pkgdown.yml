@@ -1,0 +1,13 @@
+pandoc: 3.1.1
+pkgdown: 2.0.7
+pkgdown_sha: ~
+articles:
+  advanced-mapping: advanced-mapping.html
+  example_analysis: example_analysis.html
+  introduction: introduction.html
+  mapping: mapping.html
+last_built: 2023-12-07T20:06Z
+urls:
+  reference: https://github.com/jhu-statprogramming-fall-2023/biostat777-project3-part1-yyingying00/reference
+  article: https://github.com/jhu-statprogramming-fall-2023/biostat777-project3-part1-yyingying00/articles
+
