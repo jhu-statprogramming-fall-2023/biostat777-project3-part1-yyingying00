@@ -1,8 +1,8 @@
 # 🗺 usmap
 
-Original R package comes from: <https://github.com/pdil/usmap>, created by [Paolo Di Lorenzo](https://github.com/pdil).
+Original R package comes from: <https://github.com/pdil/usmap>, which is created by [Paolo Di Lorenzo](https://github.com/pdil).
 
-Pkgdown website for this package: <https://jhu-statprogramming-fall-2023.github.io/biostat777-project3-part1-yyingying00>; the website and the Example Analysis were created by [Yingying Yu](https://github.com/yyingying00).
+The Pkgdown website link: <https://jhu-statprogramming-fall-2023.github.io/biostat777-project3-part1-yyingying00>; the website and the Example Analysis were created by [Yingying Yu](https://github.com/yyingying00).
 
 5 things customized in the `pkgdown` website:
 

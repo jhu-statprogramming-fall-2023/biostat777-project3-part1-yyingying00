@@ -294,5 +294,6 @@ From the analysis of the tornado dataset, we found there are 67,937 tornadoes to
 | `dplyr`      | `count` `group_by` `mutate` `arrange` `summarise` |
 | `forcats`    | `fct_relevel`                                     |
 | `ggplot2`    | `geom_boxplot` `geom_line` `geom_col` `facet_wrap`|
-
+| `purrr`      | `map_int` `map_dbl`                               |
+| `usmap`      | `fips` `plot_usmap`                               |
 
